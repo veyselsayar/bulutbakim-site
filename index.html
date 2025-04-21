@@ -111,24 +111,56 @@
   </main>
 
   <!-- Form -->
-  <section id="contact" class="bg-gray-50 py-20 px-6">
-    <div class="max-w-xl mx-auto">
-      <h2 class="text-3xl font-semibold text-center mb-6">İletişime Geçin</h2>
-      <form
-          id="contactForm"
-          action="https://formspree.io/f/xldbrbja"
-          method="POST"
-          class="grid gap-4 bg-white p-6 rounded-xl shadow"
-        >
-      <form id="contactForm" class="grid gap-4 bg-white p-6 rounded-xl shadow">
-        <input type="text" placeholder="Adınız Soyadınız" class="p-3 border border-gray-300 rounded" required />
-        <input type="email" placeholder="E-posta Adresiniz" class="p-3 border border-gray-300 rounded" required />
-        <textarea placeholder="Mesajınız" rows="4" class="p-3 border border-gray-300 rounded" required></textarea>
-        <button type="submit" class="bg-black text-white py-2 px-4 rounded-full hover:bg-gray-900 transition">Gönder</button>
-        <p id="successMsg" class="hidden mt-4 text-green-600 font-medium text-center">Teşekkürler! Mesajınız alındı.</p>
-      </form>
-    </div>
-  </section>
+<section id="contact" class="bg-gray-50 py-20 px-6">
+  <div class="max-w-xl mx-auto">
+    <h2 class="text-3xl font-semibold text-center mb-6">İletişime Geçin</h2>
+
+    <!-- TEK bir form, doğru action + method + name’ler -->
+    <form
+      id="contactForm"
+      action="https://formspree.io/f/xldbrbja"  <!-- kendi endpoint’in -->
+      method="POST"
+      class="grid gap-4 bg-white p-6 rounded-xl shadow"
+    >
+      <input
+        type="text"
+        name="name"                           <!-- EKLENDİ -->
+        placeholder="Adınız Soyadınız"
+        class="p-3 border border-gray-300 rounded"
+        required
+      />
+      <input
+        type="email"
+        name="email"                          <!-- EKLENDİ -->
+        placeholder="E‑posta Adresiniz"
+        class="p-3 border border-gray-300 rounded"
+        required
+      />
+      <textarea
+        name="message"                        <!-- EKLENDİ -->
+        placeholder="Mesajınız"
+        rows="4"
+        class="p-3 border border-gray-300 rounded"
+        required
+      ></textarea>
+
+      <button
+        type="submit"
+        class="bg-black text-white py-2 px-4 rounded-full hover:bg-gray-900 transition"
+      >
+        Gönder
+      </button>
+
+      <p
+        id="successMsg"
+        class="hidden mt-4 text-green-600 font-medium text-center"
+      >
+        Teşekkürler! Mesajınız alındı.
+      </p>
+    </form>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="text-center text-sm text-gray-500 py-8 border-t border-gray-200">
